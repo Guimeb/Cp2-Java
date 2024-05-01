@@ -1,4 +1,4 @@
-package oop;
+package models;
 
 public class Veiculos {
 
@@ -24,41 +24,42 @@ public class Veiculos {
             System.out.println("O veiculo nao foi acelerado, adicione um valor a quanto deseja acelerar em kilometros");
             System.out.println("(O valor nao pode ser 0 ou negativo)");
         } else {
-            if (velocidadeAtual + incremento <= velocidadeMaxima) {
+            if (velocidadeAtual + incremento <= velocidadeMaxima) { //Verifica se o incremento ultrapassa a velocidade maxima
             velocidadeAtual += incremento;
-            System.out.println("A velocidade foi aumentada em: " + incremento + "Km/h");
+            System.out.println("A velocidade foi aumentada em: " + incremento + " Km/h");
             } else {
             velocidadeAtual = velocidadeMaxima;
-            System.out.println("O veiculo ja esta em velocidade maxima");
+            System.out.println("O veiculo foi acelerado ao maximo "+ velocidadeAtual +" Km/h, e nao pode acelerar mais.");
             }
         }
+        System.out.println("---------------------------------------------");
     }
 
     public void reduzirVelocidade(int decremento) {
 
         System.out.println("Tentando reduzir a velocidade do veiculo");
         
-        if (decremento <= 0) { //Verifica se o incremento na velocidade é invalido ou nao
+        if (decremento <= 0) { //Verifica se o decremento na velocidade é invalido ou nao
             System.out.println("O veiculo nao alterou a velocidade, adicione um valor a quanto deseja acelerar em kilometros");
             System.out.println("(O valor nao pode ser 0 ou negativo)");
         } else {
-            if (velocidadeAtual - decremento >= 0) {
+            if (velocidadeAtual - decremento >= 0) { //Verifica se o decremento ultrapassa 0
                 velocidadeAtual -= decremento;
-                System.out.println("A velocidade foi reduzida em: " + decremento + "Km/h");
+                System.out.println("A velocidade foi reduzida em: " + decremento + " Km/h");
             } else {
                 velocidadeAtual = 0;
-                System.out.println("O veiculo ja esta parado.");
+                System.out.println("O veiculo reduziu toda sua velocidade e esta parado.");
             }
         }
+        System.out.println("---------------------------------------------");
     }
 
-    public void obterStatus() {
+    public void obterStatus() { //Mostra o status do veiculo
         System.out.println("Marca: " + marca);
         System.out.println("Modelo: " + modelo);
         System.out.println("Ano: " + ano);
         System.out.println("Velocidade Máxima: " + velocidadeMaxima + " km/h");
         System.out.println("Velocidade Atual: " + velocidadeAtual + " km/h");
-        System.out.println("---------------------------------------------");
     }
 
     //Getters and Setters

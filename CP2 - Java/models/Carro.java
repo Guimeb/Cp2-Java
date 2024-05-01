@@ -1,4 +1,4 @@
-package oop;
+package models;
 
 public class Carro extends Veiculos {
     private boolean arCondicionado;
@@ -8,31 +8,30 @@ public class Carro extends Veiculos {
         this.arCondicionado = false; // Ar condicionado inicialmente desligado
     }
 
-    @Override
-    public void obterStatus() {
-        System.out.println("Marca: " + getMarca());
-        System.out.println("Modelo: " + getModelo());
-        System.out.println("Ano: " + getAno());
-        System.out.println("Velocidade Máxima: " + getVelocidadeMaxima() + " km/h");
-        System.out.println("Velocidade Atual: " + getVelocidadeAtual() + " km/h");
+    public void obterStatus() { //Sobreposição do método obterStatus por subclasse adicionando ar condicionado para carro
+        super.obterStatus();
         System.out.println("Ar Condicionado: " + arCondicionado);
         System.out.println("---------------------------------------------");
     }
 
-    public void ligarArCondicionado() {
+    public void ligarArCondicionado() { 
+        System.out.println("Ligando o ar condicionado...");
         if (arCondicionado == true) {
             System.out.println("Ar Condicionado ja esta ligado!");
         } else {
             this.arCondicionado = true;
         }
+        System.out.println("---------------------------------------------");
     }
 
     public void desligarArCondicionado() {
+        System.out.println("Desligando o ar condicionado...");
         if (arCondicionado == false) {
             System.out.println("Ar Condicionado ja esta desligado!");
         } else {
             this.arCondicionado = false;
         }
+        System.out.println("---------------------------------------------");
     }
 
 }
