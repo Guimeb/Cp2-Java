@@ -1,11 +1,13 @@
 package oop;
 
 public class Caminhao extends Veiculos {
+    private double cargaAtual;
     private double cargaMaxima;
 
     public Caminhao(String marca, String modelo, int ano) {
         super(marca, modelo, ano, 100); // Velocidade máxima do caminhão é 100 km/h
-        this.cargaMaxima = 1.0; // Carga máxima em toneladas
+        this.cargaAtual = 0;
+        this.cargaMaxima = 1000.0; // Carga máxima em toneladas
     } 
 
     @Override

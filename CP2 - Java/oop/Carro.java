@@ -5,7 +5,7 @@ public class Carro extends Veiculos {
 
     public Carro(String marca, String modelo, int ano) {
         super(marca, modelo, ano, 180); // Velocidade máxima do carro é 180 km/h
-        this.arCondicionado = true; // Ar condicionado inicialmente desligado
+        this.arCondicionado = false; // Ar condicionado inicialmente desligado
     }
 
     @Override
@@ -18,14 +18,21 @@ public class Carro extends Veiculos {
         System.out.println("Ar Condicionado: " + arCondicionado);
         System.out.println("---------------------------------------------");
     }
-    
 
     public void ligarArCondicionado() {
-        this.arCondicionado = true;
+        if (arCondicionado == true) {
+            System.out.println("Ar Condicionado ja esta ligado!");
+        } else {
+            this.arCondicionado = true;
+        }
     }
 
     public void desligarArCondicionado() {
-        this.arCondicionado = false;
+        if (arCondicionado == false) {
+            System.out.println("Ar Condicionado ja esta desligado!");
+        } else {
+            this.arCondicionado = false;
+        }
     }
 
 }

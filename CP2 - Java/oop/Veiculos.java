@@ -17,18 +17,38 @@ public class Veiculos {
     }
 
     public void acelerar(int incremento) {
-        if (velocidadeAtual + incremento <= velocidadeMaxima) {
-            velocidadeAtual += incremento;
+
+        System.out.println("Tentando acelerar o veiculo");
+
+        if (incremento <= 0) { //Verifica se o incremento na velocidade é invalido ou nao
+            System.out.println("O veiculo nao foi acelerado, adicione um valor a quanto deseja acelerar em kilometros");
+            System.out.println("(O valor nao pode ser 0 ou negativo)");
         } else {
+            if (velocidadeAtual + incremento <= velocidadeMaxima) {
+            velocidadeAtual += incremento;
+            System.out.println("A velocidade foi aumentada em: " + incremento + "Km/h");
+            } else {
             velocidadeAtual = velocidadeMaxima;
+            System.out.println("O veiculo ja esta em velocidade maxima");
+            }
         }
     }
 
     public void reduzirVelocidade(int decremento) {
-        if (velocidadeAtual - decremento >= 0) {
-            velocidadeAtual -= decremento;
+
+        System.out.println("Tentando reduzir a velocidade do veiculo");
+        
+        if (decremento <= 0) { //Verifica se o incremento na velocidade é invalido ou nao
+            System.out.println("O veiculo nao alterou a velocidade, adicione um valor a quanto deseja acelerar em kilometros");
+            System.out.println("(O valor nao pode ser 0 ou negativo)");
         } else {
-            velocidadeAtual = 0;
+            if (velocidadeAtual - decremento >= 0) {
+                velocidadeAtual -= decremento;
+                System.out.println("A velocidade foi reduzida em: " + decremento + "Km/h");
+            } else {
+                velocidadeAtual = 0;
+                System.out.println("O veiculo ja esta parado.");
+            }
         }
     }
 
