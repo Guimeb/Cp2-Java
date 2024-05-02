@@ -24,7 +24,7 @@ public class Main { //Metodo principal
          // Criando um novo objeto moto
          Moto moto = new Moto("Honda", "CBR", 2022);
          moto.obterStatus(); // Mostrando status da moto
-         moto.acelerar(200); // Acelerando a moto
+         moto.acelerar(40); // Acelerando a moto
          moto.obterStatus(); // Mostrando status da moto apos aceleração
          // Tentando empinar a moto
          moto.empinarMoto(); // Verificando se a moto pode ser empinada
